@@ -56,7 +56,7 @@ section.hero{
 
 @media screen and (max-width: 767px){
 	section.hero{
-		height: 100vh;
+		height: 400px;
 	}
 	
 }
@@ -167,18 +167,22 @@ ol {
     background-position: top center;
 }
 
+
 .product__item__pic.set-bg {
 	background-position: center; /* Mengubah posisi menjadi tengah untuk layar mobile */
-	background-size: contain; /* Memastikan gambar disesuaikan dengan ukuran kontainer tanpa memotong */
+	background-size: cover; /* Memastikan gambar disesuaikan dengan ukuran kontainer tanpa memotong */
 }
 
 
 /* Aturan khusus untuk ukuran layar mobile */
-@media (max-width: 768px) {
+@media (max-width: 780px) {
     .product__item__pic .set-bg {
         background-position: center; /* Mengubah posisi menjadi tengah untuk layar mobile */
-        background-size: contain; /* Memastikan gambar disesuaikan dengan ukuran kontainer tanpa memotong */
+        background-size: cover; /* Memastikan gambar disesuaikan dengan ukuran kontainer tanpa memotong */
     }
+	.hero__items.set-bg, .normal-breadcrumb.set-bg {
+		height: 150px;
+	}
 
 
 }

@@ -39,7 +39,7 @@
             <div class="row">
                 <div class="col-lg-2">
                     <div class="header__logo">
-                        <a href="">
+                        <a href="<?=base_url()?>">
                             <img src="<?=base_url('assets/front-end/')?>img/logo-joki.png" alt=""
                                 style=" width: 70px; margin-top: -20px; margin-bottom: -15px">
                         </a>
@@ -49,7 +49,7 @@
                     <div class="header__nav">
                         <nav class="header__menu mobile-menu">
                             <ul>
-                                <li class="active"><a href="/joki-ml">Homepage</a></li>
+                                <li class="active"><a href="<?=base_url('')?>">Homepage</a></li>
                                 <!-- <li><a href="#">Contacts</a></li> -->
                             </ul>
                         </nav>
@@ -70,7 +70,7 @@
     <section class="hero d-flex flex-wrap align-items-center">
         <div class="container">
             <div class="hero__slider owl-carousel">
-                <div class="hero__items set-bg" data-setbg="<?=base_url('assets/uploads/layanan/')?>slider.png">
+                <div class="hero__items set-bg" data-setbg="<?=base_url('assets/front-end/img/')?>carousel-ml2.png">
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="hero__text">
@@ -85,7 +85,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="hero__items set-bg" data-setbg="<?=base_url('assets/uploads/layanan/')?>slider.png">
+                <div class="hero__items set-bg" data-setbg="<?=base_url('assets/front-end/img/')?>carousel-ml.png">
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="hero__text">

@@ -49,7 +49,7 @@
                     <div class="header__nav">
                         <nav class="header__menu mobile-menu">
                             <ul>
-                                <li class=""><a href="/joki-ml">Homepage</a></li>
+                                <li class=""><a href="/">Homepage</a></li>
                                 <!-- <li><a href="#">Contacts</a></li> -->
                             </ul>
                         </nav>
@@ -67,7 +67,7 @@
     <!-- Header End -->
 
     <!-- Normal Breadcrumb Begin -->
-    <section class="normal-breadcrumb set-bg" data-setbg="<?=base_url('assets/front-end/')?>img/slider.jpg">
+    <section class="normal-breadcrumb set-bg" data-setbg="<?=base_url('assets/front-end/')?>img/carousel-ml.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">

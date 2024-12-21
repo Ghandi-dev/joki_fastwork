@@ -41,7 +41,7 @@
             <div class="row">
                 <div class="col-lg-2">
                     <div class="header__logo">
-                        <a href="/joki-ml">
+                        <a href="<?=base_url()?>">
                             <img src="<?=base_url('assets/front-end/')?>img/logo-joki.png" alt=""
                                 style=" width: 70px; margin-top: -20px; margin-bottom: -15px">
                         </a>
@@ -51,7 +51,7 @@
                     <div class="header__nav">
                         <nav class="header__menu mobile-menu">
                             <ul>
-                                <li class=""><a href="/joki-ml">Homepage</a></li>
+                                <li class=""><a href="<?=base_url()?>">Homepage</a></li>
                                 <!-- <li><a href="#">Contacts</a></li> -->
                             </ul>
                         </nav>
