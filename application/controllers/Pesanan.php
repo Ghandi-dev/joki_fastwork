@@ -11,8 +11,10 @@ class Pesanan extends CI_Controller
         $this->load->view('landing-page/index', $data);
     }
 
-    public function create(){
+    public function create()
+    {
         $data = [
+            'id_layanan' => $this->input->post('id_layanan'),
             'login_via' => $this->input->post('login_via'),
             'email' => $this->input->post('email'),
             'password' => $this->input->post('password'),

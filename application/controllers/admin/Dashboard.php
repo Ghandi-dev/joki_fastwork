@@ -38,9 +38,8 @@ class Dashboard extends CI_Controller
 
         $data['monthly_orders'] = $this->db->query("SELECT DATE(created_at) as day, COUNT(id) as total FROM pesanan GROUP BY day ORDER BY day")->result_array();
 
-
         // var_dump($data['pesanan_today']); die();
-
+        $data['title'] = 'Dashboard';
         $this->load->view('admin/dashboard/index', $data);
     }
 }

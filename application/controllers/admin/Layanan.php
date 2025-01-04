@@ -16,12 +16,14 @@ class Layanan extends CI_Controller
         $this->db->join('kategori', 'kategori.id = layanan.kategori_id');
         $this->db->order_by('kategori.nama_kategori', 'DESC');
         $data['layanan'] = $this->db->get()->result();
+        $data['title'] = 'Layanan';
         $this->load->view('admin/layanan/index', $data);
     }
 
     public function tambah()
     {
         $data['kategori'] = $this->db->get('kategori')->result();
+        $data['title'] = 'Layanan';
         $this->load->view('admin/layanan/tambah', $data);
     }
 
@@ -34,7 +36,7 @@ class Layanan extends CI_Controller
         $this->upload->initialize(array(
             'allowed_types' => 'png|jpg|jpeg',
             'upload_path' => 'assets/uploads/layanan/',
-            'encrypt_name'  => TRUE,
+            'encrypt_name' => true,
             'max_size' => 5048,
         ));
 
@@ -47,7 +49,7 @@ class Layanan extends CI_Controller
         }
 
         $hargaFromPost = $this->input->post("harga");
-        $harga = (int)str_replace('.', '', $hargaFromPost);
+        $harga = (int) str_replace('.', '', $hargaFromPost);
 
         $data = [
             'kategori_id' => htmlspecialchars($this->input->post('kategori')),
@@ -65,6 +67,7 @@ class Layanan extends CI_Controller
     {
         $data['layanan'] = $this->db->get_where('layanan', ['id' => $id])->row();
         $data['kategori'] = $this->db->get('kategori')->result();
+        $data['title'] = 'Layanan';
         $this->load->view('admin/layanan/edit', $data);
     }
 
@@ -77,7 +80,7 @@ class Layanan extends CI_Controller
         $this->upload->initialize(array(
             'allowed_types' => 'png|jpg|jpeg',
             'upload_path' => 'assets/uploads/layanan/',
-            'encrypt_name'  => TRUE,
+            'encrypt_name' => true,
             'max_size' => 5048,
         ));
 
@@ -103,7 +106,7 @@ class Layanan extends CI_Controller
         }
 
         $hargaFromPost = $this->input->post("harga");
-        $harga = (int)str_replace('.', '', $hargaFromPost);
+        $harga = (int) str_replace('.', '', $hargaFromPost);
 
         $data = array(
             'kategori_id' => htmlspecialchars($this->input->post('kategori')),

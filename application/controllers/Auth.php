@@ -11,7 +11,8 @@ class Auth extends CI_Controller
         $this->form_validation->set_rules('password', 'Password', 'required');
 
         if ($this->form_validation->run() == false) {
-            $this->load->view('auth/login');
+            $data['title'] = 'Login';
+            $this->load->view('auth/login', $data);
         } else {
             $username = $this->input->post('username');
             $password = $this->input->post('password');
@@ -41,7 +42,6 @@ class Auth extends CI_Controller
             }
         }
     }
-
 
     public function logout()
     {
