@@ -10,6 +10,9 @@
         rel="stylesheet">
 
     <title>Joki Fastwork | <?=$title?></title>
+    <!-- Favicons -->
+    <link href="<?=base_url('assets/')?>logo-joki.png" rel="icon">
+    <link href="<?=base_url('assets/')?>logo-joki.png" rel="apple-touch-icon">
 
     <!-- Bootstrap core CSS -->
     <link href="<?=base_url('assets/landing/')?>vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
