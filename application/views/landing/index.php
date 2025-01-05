@@ -34,6 +34,17 @@
         background-position: center;
         /* Memusatkan gambar */
     }
+
+    @media screen and (max-width: 768px) {
+
+        html,
+        body {
+            background-image: none;
+            /* Hapus gambar latar */
+            background-color: #27292a;
+            /* Ganti dengan warna latar */
+        }
+    }
     </style>
 </head>
 
