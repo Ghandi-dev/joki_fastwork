@@ -16,4 +16,10 @@ class Pesanan extends CI_Controller
         $this->load->view('admin/pesanan/index', $data);
     }
 
+    public function hapus($id)
+    {
+        $this->db->delete('pesanan', ['id' => $id]);
+        redirect('admin/pesanan');
+    }
+
 }
