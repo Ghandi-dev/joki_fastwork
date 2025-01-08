@@ -25,7 +25,7 @@
             <a class="nav-link <?=$this->uri->segment(2) == "layanan" ? "" : "collapsed"?>"
                 href="<?=base_url('admin/layanan')?>">
                 <i class="bi bi-x-diamond-fill"></i>
-                <span>Layanan</span>
+                <span>Jenis Layanan</span>
             </a>
         </li><!-- End F.A.Q Page Nav -->
 
