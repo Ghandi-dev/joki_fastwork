@@ -1,35 +1,42 @@
-<head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Joki Fastwork</title>
-    <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
-    <link rel="icon" href="<?=base_url('assets/uploads/logo/')?>logo-joki.ico" type="image/x-icon" />
+<!-- ======= Header ======= -->
+<header id="header" class="header fixed-top d-flex align-items-center">
 
-    <!-- Fonts and icons -->
-    <script src="<?=base_url('assets/admin/')?>js/plugin/webfont/webfont.min.js"></script>
-    <script>
-    WebFont.load({
-        google: {
-            families: ["Lato:300,400,700,900"]
-        },
-        custom: {
-            families: [
-                "Flaticon",
-                "Font Awesome 5 Solid",
-                "Font Awesome 5 Regular",
-                "Font Awesome 5 Brands",
-                "simple-line-icons",
-            ],
-            urls: ["<?=base_url('assets/admin/')?>css/fonts.min.css"],
-        },
-        active: function() {
-            sessionStorage.fonts = true;
-        },
-    });
-    </script>
+    <div class="d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center">
+            <img src="<?=base_url('assets/')?>logo-joki.png" alt="">
+            <!-- <span class="d-none d-lg-block">Joki Fastwork</span> -->
+        </a>
+        <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
 
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="<?=base_url('assets/admin/')?>css/bootstrap.min.css" />
-    <link rel="stylesheet" href="<?=base_url('assets/admin/')?>css/atlantis.min.css" />
-    <!-- CSS Just for demo purpose, don't include it in your project -->
-    <link rel="stylesheet" href="<?=base_url('assets/admin/')?>css/demo.css" />
-</head>
+    <nav class="header-nav ms-auto">
+        <ul class="d-flex align-items-center">
+
+            <li class="nav-item dropdown pe-3">
+
+                <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                    <img src="<?php echo base_url('assets/admin'); ?>/img/avatar-1.png" alt="Profile"
+                        class="rounded-circle">
+                    <span
+                        class="d-none d-md-block dropdown-toggle ps-2"><?=$this->session->userdata('nama') ?? 'Admin';?></span>
+                </a><!-- End Profile Iamge Icon -->
+
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                    <li class="dropdown-header">
+                        <h6><?=$this->session->userdata('nama') ?? 'Admin';?></h6>
+                        <span>admin</span>
+                    </li>
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center" href="<?=base_url('auth/logout')?>">
+                            <i class="bi bi-box-arrow-right"></i>
+                            <span>Log Out</span>
+                        </a>
+                    </li>
+
+                </ul><!-- End Profile Dropdown Items -->
+            </li><!-- End Profile Nav -->
+
+        </ul>
+    </nav><!-- End Icons Navigation -->
+
+</header><!-- End Header -->

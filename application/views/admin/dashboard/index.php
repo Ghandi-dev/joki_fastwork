@@ -1,119 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php $this->load->view('layouts/admin/header')?>
+<head>
+    <?php $this->load->view('layouts/admin/head')?>
+</head>
 
 <body>
-    <div class="wrapper">
-        <?php $this->load->view('layouts/admin/navbar')?>
+    <?php $this->load->view('layouts/admin/header')?>
+    <?php $this->load->view('layouts/admin/sidebar')?>
+    <main id="main" class="main">
 
-        <?php $this->load->view('layouts/admin/sidebar')?>
+        <div class="pagetitle">
+            <h1>Dashboard</h1>
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item active">Dashboard</li>
+                </ol>
+            </nav>
+        </div><!-- End Page Title -->
 
-        <!-- CONTENT -->
-        <div class="main-panel">
-
-            <!-- CONTENT -->
-            <div class="content">
-                <div class="panel-header bg-light">
-                    <div class="page-inner py-5">
-                        <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
-                            <div>
-                                <h2 class="text-dark pb-2 fw-bold">Dashboard</h2>
-                            </div>
-                            <!-- <div class="ml-md-auto py-2 py-md-0">
-                                <a href="#" class="btn btn-white btn-border btn-round mr-2">Manage</a>
-                                <a href="#" class="btn btn-secondary btn-round">Add Customer</a>
-                            </div> -->
-                        </div>
-                    </div>
-                </div>
-                <div class="page-inner mt--5">
-
+        <section class="section dashboard">
+            <div class="row">
+                <!-- Left side columns -->
+                <div class="col-12">
                     <div class="row">
-                        <div class="col-sm-12 col-md-4">
-                            <div class="card card-stats card-danger card-round">
-                                <div class="card-body ">
-                                    <div class="row">
-                                        <div class="col-5">
-                                            <div class="icon-big text-center">
-                                                <i class="fa fa-shopping-cart"></i>
-                                            </div>
-                                        </div>
-                                        <div class="col-7 col-stats">
-                                            <div class="numbers">
-                                                <p class="card-category">Pesanan Per Hari</p>
-                                                <h4 class="card-title"><?=$pesanan_today->jumlah?></h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-4">
-                            <div class="card card-stats card-danger card-round">
-                                <div class="card-body ">
-                                    <div class="row">
-                                        <div class="col-5">
-                                            <div class="icon-big text-center">
-                                                <i class="fa fa-shopping-cart"></i>
-                                            </div>
-                                        </div>
-                                        <div class="col-7 col-stats">
-                                            <div class="numbers">
-                                                <p class="card-category">Pesanan Tujuh Hari Terakhir</p>
-                                                <h4 class="card-title"><?=$pesanan_week->jumlah?></h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-4">
-                            <div class="card card-stats card-danger card-round">
-                                <div class="card-body ">
-                                    <div class="row">
-                                        <div class="col-5">
-                                            <div class="icon-big text-center">
-                                                <i class="fa fa-shopping-cart"></i>
-                                            </div>
-                                        </div>
-                                        <div class="col-7 col-stats">
-                                            <div class="numbers">
-                                                <p class="card-category">Pesanan Satu Bulan Terakhir</p>
-                                                <h4 class="card-title"><?=$pesanan_month->jumlah?></h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        <!-- Sales Card -->
+                        <div class="col-xxl-4 col-md-6">
+                            <div class="card info-card sales-card">
 
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h4>Grafik Pesanan</h4>
-                                </div>
                                 <div class="card-body">
-                                    <div class="chart-container">
-                                        <canvas id="lineChart"></canvas>
+                                    <h5 class="card-title">Pesanan <span>| Hari Ini</span></h5>
+
+                                    <div class="d-flex align-items-center">
+                                        <div
+                                            class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                            <i class="bi bi-cart"></i>
+                                        </div>
+                                        <div class="ps-3">
+                                            <h6><?=$pesanan_today->jumlah?></h6>
+                                        </div>
                                     </div>
-                                    <div id="myChartLegend"></div>
+                                </div>
+
+                            </div>
+                        </div><!-- End Sales Card -->
+
+                        <!-- Revenue Card -->
+                        <div class="col-xxl-4 col-md-6">
+                            <div class="card info-card revenue-card">
+
+                                <div class="card-body">
+                                    <h5 class="card-title">Pesanan <span>| 7 Hari Terakhir</span></h5>
+
+                                    <div class="d-flex align-items-center">
+                                        <div
+                                            class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                            <i class="bi bi-cart"></i>
+                                        </div>
+                                        <div class="ps-3">
+                                            <h6><?=$pesanan_week->jumlah?></h6>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><!-- End Revenue Card -->
+
+                        <!-- Customers Card -->
+                        <div class="col-xxl-4 col-xl-12">
+                            <div class="card info-card customers-card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Pesanan <span>| 1 Bulan Terakhir</span></h5>
+                                    <div class="d-flex align-items-center">
+                                        <div
+                                            class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                            <i class="bi bi-cart"></i>
+                                        </div>
+                                        <div class="ps-3">
+                                            <h6><?=$pesanan_month->jumlah?></h6>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
-                        </div>
+
+                        </div><!-- End Customers Card -->
+
+                        <!-- Reports -->
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grafik Pesanan</h5>
+
+                                    <!-- Line Chart -->
+                                    <div id="reportsChart"></div>
+
+                                    <script>
+                                    document.addEventListener("DOMContentLoaded", () => {
+                                        // Data PHP ke JavaScript
+                                        const monthlyOrders = <?php echo json_encode($monthly_orders); ?>;
+                                        const dates = monthlyOrders.map(order => order.day);
+                                        const totals = monthlyOrders.map(order => parseInt(order.total, 10));
+
+                                        new ApexCharts(document.querySelector("#reportsChart"), {
+                                            series: [{
+                                                name: 'Orders',
+                                                data: totals,
+                                            }],
+                                            chart: {
+                                                height: 350,
+                                                type: 'line',
+                                                toolbar: {
+                                                    show: false
+                                                },
+                                            },
+                                            markers: {
+                                                size: 5
+                                            },
+                                            colors: ['#4154f1'],
+                                            fill: {
+                                                type: "gradient",
+                                                gradient: {
+                                                    shadeIntensity: 1,
+                                                    opacityFrom: 0.3,
+                                                    opacityTo: 0.4,
+                                                    stops: [0, 90, 100]
+                                                }
+                                            },
+                                            dataLabels: {
+                                                enabled: false
+                                            },
+                                            stroke: {
+                                                curve: 'smooth',
+                                                width: 2
+                                            },
+                                            xaxis: {
+                                                type: 'datetime',
+                                                categories: dates
+                                            },
+                                            yaxis: {
+                                                labels: {
+                                                    formatter: function(value) {
+                                                        return value.toFixed(
+                                                            0); // Menampilkan angka tanpa desimal
+                                                    }
+                                                }
+                                            },
+                                            tooltip: {
+                                                x: {
+                                                    format: 'dd/MM/yy'
+                                                },
+                                            }
+                                        }).render();
+                                    });
+                                    </script>
+                                    <!-- End Line Chart -->
+
+                                </div>
+                            </div>
+                        </div><!-- End Reports -->
+
                     </div>
-                </div>
+                </div><!-- End Left side columns -->
+
             </div>
-            <!-- END CONTENT -->
+        </section>
 
-            <?php $this->load->view('layouts/admin/footer')?>
-        </div>
+    </main>
+    <!-- End #main -->
+    <?php $this->load->view('layouts/admin/footer');?>
+    <!-- Vendor JS Files -->
+    <script src="<?=base_url('assets/admin/')?>vendor/jquery/jquery.3.2.1.min.js"></script>
+    <script src="<?=base_url('assets/admin/')?>vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="<?=base_url('assets/admin/')?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?=base_url('assets/admin/')?>vendor/sweet-alert/sweetalert2.all.js"></script>
 
-    </div>
 
-    <?php $this->load->view('layouts/admin/script')?>
+    <!-- Template Main JS File -->
+    <script src="<?=base_url('assets/admin/')?>js/main.js"></script>
+    <?php $this->load->view('layouts/admin/sweetalert')?>
 </body>
 
 </html>

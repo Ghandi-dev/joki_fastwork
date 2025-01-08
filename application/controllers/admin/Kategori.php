@@ -12,18 +12,20 @@ class Kategori extends CI_Controller
     public function index()
     {
         $data['kategori'] = $this->db->get('kategori')->result();
+        $data['title'] = 'Kategori';
         $this->load->view('admin/kategori/index', $data);
     }
 
     public function tambah()
     {
+        $data['title'] = 'Kategori';
         $this->load->view('admin/kategori/tambah');
     }
 
     public function proses_tambah()
     {
         $data = [
-            'nama_kategori' => htmlspecialchars($this->input->post('nama_kategori'))
+            'nama_kategori' => htmlspecialchars($this->input->post('nama_kategori')),
         ];
 
         $this->db->insert('kategori', $data);
@@ -34,13 +36,14 @@ class Kategori extends CI_Controller
     public function edit($id)
     {
         $data['kategori'] = $this->db->get_where('kategori', ['id' => $id])->row();
+        $data['title'] = 'Kategori';
         $this->load->view('admin/kategori/edit', $data);
     }
 
     public function proses_edit($id)
     {
         $data = [
-            'nama_kategori' => htmlspecialchars($this->input->post('nama_kategori'))
+            'nama_kategori' => htmlspecialchars($this->input->post('nama_kategori')),
         ];
 
         $this->db->update('kategori', $data, ['id' => $id]);

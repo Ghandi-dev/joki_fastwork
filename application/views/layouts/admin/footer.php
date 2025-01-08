@@ -1,10 +1,6 @@
-<footer class="footer">
-    <div class="container-fluid">
-        <div class="copyright ml-auto">
-            <script>
-            document.write(new Date().getFullYear());
-            </script>
-            Design by Joki Fastwork teams
-        </div>
+<!-- ======= Footer ======= -->
+<footer id="footer" class="footer">
+    <div class="copyright">
+        &copy; Copyright <strong><span>Joki Fastwork</span></strong>. All Rights Reserved
     </div>
-</footer>
+</footer><!-- End Footer -->

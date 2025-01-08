@@ -12,13 +12,14 @@ class Pesanan extends CI_Controller
     public function index()
     {
         $data['pesanan'] = $this->db->get('pesanan')->result();
+        $data['title'] = 'Pesanan';
         $this->load->view('admin/pesanan/index', $data);
     }
 
     public function hapus($id)
     {
         $this->db->delete('pesanan', ['id' => $id]);
-        $this->session->set_flashdata('success', 'Data berhasil dihapus!');
         redirect('admin/pesanan');
     }
+
 }

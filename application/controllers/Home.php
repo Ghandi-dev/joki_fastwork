@@ -7,7 +7,8 @@ class Home extends CI_Controller
     {
         $data['kategori'] = $this->db->get('kategori')->result();
         $data['layanan'] = $this->db->get('layanan')->result();
-        $this->load->view('landing-page/index', $data);
+        $data['title'] = 'Home';
+        $this->load->view('landing/index', $data);
     }
 
     public function formulir($id)
@@ -20,6 +21,7 @@ class Home extends CI_Controller
         $this->db->where('layanan.id', $id);
         $this->db->join('kategori', 'kategori.id = layanan.kategori_id');
         $data['layanan'] = $this->db->get()->row();
-        $this->load->view('landing-page/formulir', $data);
+        $data['title'] = 'Formulir';
+        $this->load->view('landing/formulir', $data);
     }
 }
